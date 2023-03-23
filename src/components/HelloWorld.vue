@@ -5,7 +5,8 @@
       <div class="logo">
         <img src="../assets/Logo.svg" alt="">
       </div>
-      <div class="links">
+    
+      <div class="links" v-show="humburger">
         <ul>
           <li>
             <a href="#">Главная</a>
@@ -32,6 +33,9 @@
           </li>
         </ul>
       </div>
+      <div class="humburger" @click.prevent="showBurger()">
+        Бургер
+      </div>
     </div>
    
     <div class="background">
@@ -55,36 +59,38 @@
           <div>
           <input type="text" v-model="from" placeholder="Откуда">
           <div class="tags">
-            <div class="tag">
+            <div class="tag" @click.prevent="tag('Астана', 'from')">
               <p>Астана</p>
             </div>
-            <div class="tag">
+            <div class="tag" @click.prevent="tag('Алматы', 'from')">
               <p>Алматы</p>
             </div>
-            <div class="tag">
+            <div class="tag" @click.prevent="tag('Шымкент', 'from')">
               <p>Шымкент</p>
             </div>
           </div>
         </div>
-        <button class="switch">
+        <button class="switch" @click.prevent="swap()">
           <img src="../assets/arrow-left-right.svg" alt="">
         </button>
         <div>
           <input type="text" v-model="to" placeholder="Куда">
           <div class="tags">
-            <div class="tag">
+            <div class="tag" @click.prevent="tag('Астана', 'to')">
               <p>Астана</p>
             </div>
-            <div class="tag">
+            <div class="tag" @click.prevent="tag('Алматы', 'to')">
               <p>Алматы</p>
             </div>
-            <div class="tag">
+            <div class="tag" @click.prevent="tag('Шымкент', 'to')">
               <p>Шымкент</p>
             </div>
           </div>
         </div>
         <button @click.prevent="getDistance()" class="search">Рассчитать стоимость</button>
+        
         </div>
+        
       </div>
 
       <div class="advantages">
@@ -263,11 +269,32 @@ export default {
           "to": 6,
           "value": 4553
         }
-      ]
+      ],
+      distance: 0,
+      humburger: false
     }
   },
 
   methods: {
+    showBurger() {
+      this.humburger = !this.humburger
+    },
+
+    swap() {
+      let temp = this.to
+      this.to = this.from
+      this.from = temp
+    },
+
+    tag(city, type) {
+      if (type == 'to') {
+        this.to = city
+      } else if (type == 'from') {
+        this.from = city
+      }
+    },
+
+
     getDistance() {
       let fromID = this.cities.find((item) => {
         return item.address == this.from
@@ -283,12 +310,9 @@ export default {
           console.log(item.value);
           return item.value
         }
-        // console.log(item);
-        // console.log( item.from == this.from && item.to == this.to);
       })
-      console.log(distance);
 
-      return distance.value
+      this.distance = distance.value
     }
   }
 
