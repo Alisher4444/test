@@ -53,7 +53,7 @@
       </div>
         <div class="filter-content">
           <div>
-          <input type="text" placeholder="Откуда">
+          <input type="text" v-model="from" placeholder="Откуда">
           <div class="tags">
             <div class="tag">
               <p>Астана</p>
@@ -70,7 +70,7 @@
           <img src="../assets/arrow-left-right.svg" alt="">
         </button>
         <div>
-          <input type="text" placeholder="Куда">
+          <input type="text" v-model="to" placeholder="Куда">
           <div class="tags">
             <div class="tag">
               <p>Астана</p>
@@ -83,7 +83,7 @@
             </div>
           </div>
         </div>
-        <button class="search">Рассчитать стоимость</button>
+        <button @click.prevent="getDistance()" class="search">Рассчитать стоимость</button>
         </div>
       </div>
 
@@ -155,7 +155,143 @@ export default {
   name: 'App',
   props: {
     msg: String
+  },
+
+  data() {
+    return {
+      from: '',
+      to: '',
+      cities: [
+        {
+          "id": 1,
+          "address": "Алматы"
+        },
+        {
+          "id": 2,
+          "address": "Астана"
+        },
+        {
+          "id": 3,
+          "address": "Кызылорда"
+        },
+        {
+          "id": 4,
+          "address": "Костанай"
+        },
+        {
+          "id": 5,
+          "address": "Петропавловск"
+        },
+        {
+          "id": 6,
+          "address": "Шымкент"
+        }
+      ],
+      distances: [
+        {
+          "from": 1,
+          "to": 2,
+          "value": 5551
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "value": 1231
+        },
+        {
+          "from": 1,
+          "to": 4,
+          "value": 8585
+        },
+        {
+          "from": 1,
+          "to": 5,
+          "value": 8244
+        },
+        {
+          "from": 1,
+          "to": 6,
+          "value": 7554
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "value": 5443
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "value": 2299
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "value": 4124
+        },
+        {
+          "from": 2,
+          "to": 6,
+          "value": 3210
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "value": 8888
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "value": 4411
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "value": 4555
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "value": 3211
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "value": 8744
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "value": 4553
+        }
+      ]
+    }
+  },
+
+  methods: {
+    getDistance() {
+      let fromID = this.cities.find((item) => {
+        return item.address == this.from
+      })
+
+      let toID = this.cities.find((item) => {
+        return item.address == this.to
+      })
+
+
+      let distance = this.distances.find((item) => {
+        if (item.from == fromID.id && item.to == toID.id) {
+          console.log(item.value);
+          return item.value
+        }
+        // console.log(item);
+        // console.log( item.from == this.from && item.to == this.to);
+      })
+      console.log(distance);
+
+      return distance.value
+    }
   }
+
 }
 </script>
 
@@ -163,360 +299,115 @@ export default {
 <style scoped>
 
 
-  .header {
-    /* width: 100%; */
-    height: 80px;
-    background-color: white;
-
-    display: flex;
-    flex-direction: row;
-    /* justify-content: space-between; */
-    padding-left: 168px;
-    padding-right: 168px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    align-items: center;
-  }
-
-  .links {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: flex-end;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    padding-left: 0;
-  }
-
-  li {
-    margin-left: 20px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #000;
-  }
-
-  .call_to_action {
-    border-left: 1px solid #ccc;
-    /* padding-left: 10px; */
-    margin-left: 20px;
-  }
-
-  .call_to_action a {
-    color: #583899;
-  }
-
-  .background {
-    width: 100%;
-    height: 600px;
-    background-color: #ccc;
-  }
-
-  .filter {
-    width: fit-content;
-    filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.1));
-
-    margin: 0 auto;
-
-    position: relative;
-    top: -100px;
-  }
-
-  .filter-content {
-    display: flex;
-    flex-direction: row;
-    padding: 20px 30px;
-    background: #FFFFFF;
-    border-radius: 0px 12px 12px 12px;
-
-  }
-
-  .calc {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-
-  .calc-item {
-    width: 195px;
-    height: 48px;
-    
-
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 18px;
-    /* identical to box height, or 129% */
-
-    text-align: center;
-    background: #F6F6F6;
-    
-  }
-
-  .calc-item:hover {
-    background: #FFFFFF;
-    color: #EF363C;
-  }
-
-  .calc-item:first-child {
-    border-radius: 12px 0 0 0 ;
-  }
-
-  .calc-item:last-child {
-    border-radius: 0 12px 0 0;
-  }
-
-  
-
-  .tags {
-    display: flex;
-    flex-direction: row;
-    margin-top: 12px;
-  }
-  .tag {
-    /* height: 30px; */
-    padding: 6px 12px;
-    background: #F6F6F6;
-    border-radius: 12px;
-    margin-right: 12px;
-
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    /* identical to box height, or 129% */
-
-
-    color: #000000;
-  }
-
-  .tag p {
-    margin: 0;
-  }
-  .switch {
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border: 0;
-  }
-
-  .search {
-    width: 276px;
-    height: 48px;
-    left: 768px;
-    top: 0px;
-
-    background: #EF363C;
-    border-radius: 12px;
-
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    /* identical to box height, or 125% */
-
-    text-align: center;
-    outline: none;
-    border: 0;
-    color: #FFFFFF;
-
-    margin-left: 24px;
-  }
-
-  input {
-    width: 350px;
-    height: 48px;
-    left: 394px;
-    top: 0px;
-
-    background: #FFFFFF;
-    border: 1px solid #CBCBCB;
-    border-radius: 12px;
-
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    /* identical to box height, or 129% */
-    padding-left: 20px;
-    outline: 0;
-    color: #000000;
-  }
-
-  input::placeholder {
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    /* identical to box height, or 129% */
-
-
-    color: #000000;
-  }
-
-  .advantages {
-    padding-left: 168px;
-    padding-right: 168px;
-    margin-top: 60px;
-  }
-
-
-  .advantages-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 30px;
-  }
-  .advantages h1 {
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 28px;
-    /* identical to box height, or 117% */
-    text-align: start;
-
-    color: #000000;
-  }
-
-  .advantages .item{
-    padding: 20px 16px;
-    background: #F6F6F6;
-    border-radius: 12px;
-    margin-right: 24px;
-  }
-
-  .advantages .item:last-child{ margin-right: 0;}
-
-  .advantages .item p{
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    /* or 125% */
-    width: 226px;
-    text-align: center;
-
-    color: #000000;
-  }
-
-  .history {
-    padding-left: 168px;
-    padding-right: 168px;
-    margin-top: 60px;
-  }
-
-  .history-content {
-    /* width: 100%; */
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-  }
-  .history h1 {
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 28px;
-    /* identical to box height, or 117% */
-
-    text-align: start;
-    color: #000000;
-
-  }
-
-  .history-content .item {
-    /* width: 446px; */
-    margin-right: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .history-content .item:last-child {
-    /* width: 446px; */
-    margin-right: 0px;
-  }
-
-  .history-content .item img {
-    border-radius: 12px;
-  }
-
-  .history-content .item-txt {
-    
-    /* height: 222px; */
-    background: #F6F6F6;
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 24px;
-  }
-
-  .history-content .item-txt:last-child {
-    margin-bottom: 0;
-    margin-top: 24px;
-  }
-
-  .item-txt-title {
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 28px;
-    /* or 117% */
-
-
-    color: #000000;
-  }
-
-  .item-txt-full{
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    /* or 129% */
-
-    text-align: justify;
-    color: rgba(0, 0, 0, 0.75);
-
-  }
-
-  .partners {
-    padding-left: 168px;
-    padding-right: 168px;
-    margin-top: 60px;
-  }
-
-  .partners h1 {
-    text-align: start;
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 28px;
-    /* identical to box height, or 117% */
-
-
-    color: #000000;
-  }
-
-  .partners-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  
 </style>
+
+
+
+Список Городов
+[
+  {
+    "id": 1,
+    "address": "Алматы"
+  },
+  {
+    "id": 2,
+    "address": "Астана"
+  },
+  {
+    "id": 3,
+    "address": "Кызылорда"
+  },
+  {
+    "id": 4,
+    "address": "Костанай"
+  },
+  {
+    "id": 5,
+    "address": "Петропавловск"
+  },
+  {
+    "id": 6,
+    "address": "Шымкент"
+  }
+]
+
+
+
+Список Растояний
+[
+  {
+    "from": 1,
+    "to": 2,
+    "value": 5551
+  },
+  {
+    "from": 1,
+    "to": 3,
+    "value": 1231
+  },
+  {
+    "from": 1,
+    "to": 4,
+    "value": 8585
+  },
+  {
+    "from": 1,
+    "to": 5,
+    "value": 8244
+  },
+  {
+    "from": 1,
+    "to": 6,
+    "value": 7554
+  },
+  {
+    "from": 2,
+    "to": 3,
+    "value": 5443
+  },
+  {
+    "from": 2,
+    "to": 4,
+    "value": 2299
+  },
+  {
+    "from": 2,
+    "to": 5,
+    "value": 4124
+  },
+  {
+    "from": 2,
+    "to": 6,
+    "value": 3210
+  },
+  {
+    "from": 3,
+    "to": 4,
+    "value": 8888
+  },
+  {
+    "from": 3,
+    "to": 5,
+    "value": 4411
+  },
+  {
+    "from": 3,
+    "to": 6,
+    "value": 4555
+  },
+  {
+    "from": 4,
+    "to": 5,
+    "value": 3211
+  },
+  {
+    "from": 4,
+    "to": 6,
+    "value": 8744
+  },
+  {
+    "from": 5,
+    "to": 6,
+    "value": 4553
+  }
+]
