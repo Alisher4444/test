@@ -166,8 +166,42 @@
                 <img src="../assets/microsoft.svg" alt="">
             </div>
         </div>
+
+
+        <div class="contact">
+            <h1>Контакты </h1>
+            <div class="address">
+                <p class="address_point">г. Алматы,  улица Жетысуская, 43</p>
+                <a href="#">+7 (727) 390‒03‒00</a>
+                <a href="#">+7 (727) 390‒03‒00</a>
+                <a href="#">+7 (727) 390‒03‒00</a>
+                <a href="#">+7 (727) 390‒03‒00</a>
+
+                <a href="#">info@exline.kz</a>
+            </div>
+            <div id="map" style="width:100%; height:600px"></div>
+        </div>
+        
     
-    
+        <div class="footer">
+            <div class="logo">
+                <img src="../assets/Logo.svg" alt="">
+            </div>
+            <div class="media">
+                <a href="#">
+                    <img src="../assets/images/insta.svg" alt="">
+                </a>
+                <a href="#">
+                    <img src="../assets/images/insta.svg" alt="">
+                </a>
+                <a href="#">
+                    <img src="../assets/images/insta.svg" alt="">
+                </a>
+            </div>
+            <div class="rules">
+                <p>© Все права защищены 2023</p>
+            </div>
+        </div>
     
     </div>
 </template>
@@ -178,6 +212,7 @@ export default {
     props: {
         msg: String
     },
+
 
     data() {
         return {
