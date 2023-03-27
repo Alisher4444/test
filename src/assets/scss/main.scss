@@ -6,6 +6,16 @@
     flex-direction: row;
 }
 
+.active {
+    background: red !important;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF !important;
+}
+
 @media screen and (min-width: 1601px) and (max-width: 1920px) and (-webkit-min-device-pixel-ratio: 1) {
 
     h1 {
@@ -134,12 +144,30 @@
 
         &-content {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             padding: 20px 30px;
             background: #FFFFFF;
             border-radius: 0px 12px 12px 12px;
 
+            .result {
+                display: flex;
+                flex-direction: row;
 
+                &-item {
+                    display: flex;
+                    flex-direction: row;
+                    margin-right: 20px;
+
+                    img {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            .form {
+                display: flex;
+                flex-direction: row;
+            }
             .tags {
                 display: flex;
                 flex-direction: row;
