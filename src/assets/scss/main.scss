@@ -6,9 +6,15 @@
     flex-direction: row;
 }
 
+.background {
+    img {
+        width: 100%;
+    }
+}
+
 .active {
     background: red !important;
-    font-family: 'Mulish';
+    font-family: $font-name;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -32,7 +38,7 @@
     }
 
     p {
-        font-family: 'Mulish';
+        font-family: $font-name;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -40,7 +46,7 @@
         /* identical to box height, or 129% */
 
 
-        color: #000000;
+        color: $black-color;
     }
 }
 
@@ -74,7 +80,7 @@
         border-radius: 12px;
 
         p {
-            font-family: 'Mulish';
+            font-family: $font-name;
             font-style: normal;
             font-weight: 700;
             font-size: 16px;
@@ -82,7 +88,7 @@
             /* identical to box height, or 138% */
 
 
-            color: #000000;
+            color: $black-color;
         }
 
         a {
@@ -99,8 +105,12 @@
 
 @media screen and (min-width: 1601px) and (max-width: 1920px) and (-webkit-min-device-pixel-ratio: 1) {
 
+    .humburger {
+        display: none;
+    }
+
     h1 {
-        font-family: 'Mulish', sans-serif;
+        font-family: $font-name;
         font-style: normal;
         font-weight: 800;
         font-size: 24px;
@@ -108,7 +118,7 @@
         /* identical to box height, or 117% */
         text-align: start;
 
-        color: #000000;
+        color: $black-color;
     }
 
     .header {
@@ -134,6 +144,7 @@
             flex-direction: row;
             width: 100%;
             justify-content: flex-end;
+            font-family: $font-name;
         }
 
 
@@ -195,7 +206,7 @@
                 height: 48px;
 
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 14px;
@@ -210,7 +221,7 @@
 
             &-item:hover {
                 background: #FFFFFF;
-                color: #EF363C;
+                color: $btn-color-red;
             }
 
             &-item:first-child {
@@ -261,7 +272,7 @@
                     border-radius: 12px;
                     margin-right: 12px;
 
-                    font-family: 'Mulish', sans-serif;
+                    font-family: $font-name;
                     font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
@@ -269,7 +280,7 @@
                     /* identical to box height, or 129% */
 
 
-                    color: #000000;
+                    color: $black-color;
 
                     p {
                         margin: 0;
@@ -294,7 +305,7 @@
                 border: 1px solid #CBCBCB;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -302,11 +313,11 @@
                 /* identical to box height, or 129% */
                 padding-left: 20px;
                 outline: 0;
-                color: #000000;
+                color: $black-color;
             }
 
             input::placeholder {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -314,7 +325,7 @@
                 /* identical to box height, or 129% */
 
 
-                color: #000000;
+                color: $black-color;
             }
 
             .search {
@@ -323,10 +334,10 @@
                 left: 768px;
                 top: 0px;
 
-                background: #EF363C;
+                background: $btn-color-red;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -366,6 +377,7 @@
         margin-top: 60px;
 
         .item {
+            text-align: center;
             padding: 20px 16px;
             background: #F6F6F6;
             border-radius: 12px;
@@ -376,7 +388,7 @@
             }
 
             p {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -385,7 +397,7 @@
                 width: 226px;
                 text-align: center;
 
-                color: #000000;
+                color: $black-color;
             }
         }
 
@@ -439,7 +451,7 @@
                     }
 
                     &-title {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 800;
                         font-size: 24px;
@@ -447,11 +459,11 @@
                         /* or 117% */
 
 
-                        color: #000000;
+                        color: $black-color;
                     }
 
                     &-full {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
@@ -485,8 +497,12 @@
 
 @media screen and (min-width: 1401px) and (max-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
 
+    .humburger {
+        display: none;
+    }
+
     h1 {
-        font-family: 'Mulish', sans-serif;
+        font-family: $font-name;
         font-style: normal;
         font-weight: 800;
         font-size: 24px;
@@ -494,7 +510,7 @@
         /* identical to box height, or 117% */
         text-align: start;
 
-        color: #000000;
+        color: $black-color;
     }
 
     .header {
@@ -520,6 +536,7 @@
             flex-direction: row;
             width: 100%;
             justify-content: flex-end;
+            font-family: $font-name;
         }
 
 
@@ -581,7 +598,7 @@
                 height: 48px;
 
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 14px;
@@ -596,7 +613,7 @@
 
             &-item:hover {
                 background: #FFFFFF;
-                color: #EF363C;
+                color: $btn-color-red;
             }
 
             &-item:first-child {
@@ -629,7 +646,7 @@
                     border-radius: 12px;
                     margin-right: 12px;
 
-                    font-family: 'Mulish', sans-serif;
+                    font-family: $font-name;
                     font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
@@ -637,7 +654,7 @@
                     /* identical to box height, or 129% */
 
 
-                    color: #000000;
+                    color: $black-color;
 
                     p {
                         margin: 0;
@@ -662,7 +679,7 @@
                 border: 1px solid #CBCBCB;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -670,11 +687,11 @@
                 /* identical to box height, or 129% */
                 padding-left: 20px;
                 outline: 0;
-                color: #000000;
+                color: $black-color;
             }
 
             input::placeholder {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -682,7 +699,7 @@
                 /* identical to box height, or 129% */
 
 
-                color: #000000;
+                color: $black-color;
             }
 
             .search {
@@ -691,10 +708,10 @@
                 left: 768px;
                 top: 0px;
 
-                background: #EF363C;
+                background: $btn-color-red;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -734,6 +751,7 @@
         margin-top: 60px;
 
         .item {
+            text-align: center;
             padding: 20px 16px;
             background: #F6F6F6;
             border-radius: 12px;
@@ -744,7 +762,7 @@
             }
 
             p {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -753,7 +771,7 @@
                 width: 226px;
                 text-align: center;
 
-                color: #000000;
+                color: $black-color;
             }
         }
 
@@ -807,7 +825,7 @@
                     }
 
                     &-title {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 800;
                         font-size: 24px;
@@ -815,11 +833,11 @@
                         /* or 117% */
 
 
-                        color: #000000;
+                        color: $black-color;
                     }
 
                     &-full {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
@@ -853,8 +871,12 @@
 
 @media screen and (min-width: 1301px) and (max-width: 1400px) and (-webkit-min-device-pixel-ratio: 1) {
 
+    .humburger {
+        display: none;
+    }
+
     h1 {
-        font-family: 'Mulish', sans-serif;
+        font-family: $font-name;
         font-style: normal;
         font-weight: 800;
         font-size: 24px;
@@ -862,7 +884,7 @@
         /* identical to box height, or 117% */
         text-align: start;
 
-        color: #000000;
+        color: $black-color;
     }
 
     .header {
@@ -888,6 +910,7 @@
             flex-direction: row;
             width: 100%;
             justify-content: flex-end;
+            font-family: $font-name;
         }
 
 
@@ -949,7 +972,7 @@
                 height: 48px;
 
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 14px;
@@ -964,7 +987,7 @@
 
             &-item:hover {
                 background: #FFFFFF;
-                color: #EF363C;
+                color: $btn-color-red;
             }
 
             &-item:first-child {
@@ -997,7 +1020,7 @@
                     border-radius: 12px;
                     margin-right: 12px;
 
-                    font-family: 'Mulish', sans-serif;
+                    font-family: $font-name;
                     font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
@@ -1005,7 +1028,7 @@
                     /* identical to box height, or 129% */
 
 
-                    color: #000000;
+                    color: $black-color;
 
                     p {
                         margin: 0;
@@ -1030,7 +1053,7 @@
                 border: 1px solid #CBCBCB;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -1038,11 +1061,11 @@
                 /* identical to box height, or 129% */
                 padding-left: 20px;
                 outline: 0;
-                color: #000000;
+                color: $black-color;
             }
 
             input::placeholder {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -1050,7 +1073,7 @@
                 /* identical to box height, or 129% */
 
 
-                color: #000000;
+                color: $black-color;
             }
 
             .search {
@@ -1059,10 +1082,10 @@
                 left: 768px;
                 top: 0px;
 
-                background: #EF363C;
+                background: $btn-color-red;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -1102,6 +1125,7 @@
         margin-top: 60px;
 
         .item {
+            text-align: center;
             padding: 20px 16px;
             background: #F6F6F6;
             border-radius: 12px;
@@ -1112,7 +1136,7 @@
             }
 
             p {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -1121,7 +1145,7 @@
                 width: 226px;
                 text-align: center;
 
-                color: #000000;
+                color: $black-color;
             }
         }
 
@@ -1175,7 +1199,7 @@
                     }
 
                     &-title {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 800;
                         font-size: 24px;
@@ -1183,11 +1207,11 @@
                         /* or 117% */
 
 
-                        color: #000000;
+                        color: $black-color;
                     }
 
                     &-full {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
@@ -1221,8 +1245,12 @@
 
 @media screen and (min-width: 1200px) and (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 1) {
 
+    .humburger {
+        display: none;
+    }
+
     h1 {
-        font-family: 'Mulish', sans-serif;
+        font-family: $font-name;
         font-style: normal;
         font-weight: 800;
         font-size: 24px;
@@ -1230,7 +1258,7 @@
         /* identical to box height, or 117% */
         text-align: start;
 
-        color: #000000;
+        color: $black-color;
     }
 
     .header {
@@ -1256,6 +1284,7 @@
             flex-direction: row;
             width: 100%;
             justify-content: flex-end;
+            font-family: $font-name;
         }
 
 
@@ -1317,7 +1346,7 @@
                 height: 48px;
 
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 14px;
@@ -1332,7 +1361,7 @@
 
             &-item:hover {
                 background: #FFFFFF;
-                color: #EF363C;
+                color: $btn-color-red;
             }
 
             &-item:first-child {
@@ -1365,7 +1394,7 @@
                     border-radius: 12px;
                     margin-right: 12px;
 
-                    font-family: 'Mulish', sans-serif;
+                    font-family: $font-name;
                     font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
@@ -1373,7 +1402,7 @@
                     /* identical to box height, or 129% */
 
 
-                    color: #000000;
+                    color: $black-color;
 
                     p {
                         margin: 0;
@@ -1398,7 +1427,7 @@
                 border: 1px solid #CBCBCB;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -1406,11 +1435,11 @@
                 /* identical to box height, or 129% */
                 padding-left: 20px;
                 outline: 0;
-                color: #000000;
+                color: $black-color;
             }
 
             input::placeholder {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -1418,7 +1447,7 @@
                 /* identical to box height, or 129% */
 
 
-                color: #000000;
+                color: $black-color;
             }
 
             .search {
@@ -1427,10 +1456,10 @@
                 left: 768px;
                 top: 0px;
 
-                background: #EF363C;
+                background: $btn-color-red;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -1470,6 +1499,7 @@
         margin-top: 60px;
 
         .item {
+            text-align: center;
             padding: 20px 16px;
             background: #F6F6F6;
             border-radius: 12px;
@@ -1480,7 +1510,7 @@
             }
 
             p {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -1489,7 +1519,7 @@
                 width: 226px;
                 text-align: center;
 
-                color: #000000;
+                color: $black-color;
             }
         }
 
@@ -1543,7 +1573,7 @@
                     }
 
                     &-title {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 800;
                         font-size: 24px;
@@ -1551,11 +1581,11 @@
                         /* or 117% */
 
 
-                        color: #000000;
+                        color: $black-color;
                     }
 
                     &-full {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
@@ -1589,8 +1619,12 @@
 
 @media screen and (min-width: 900px) and (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1) {
 
+    .humburger {
+        display: none;
+    }
+
     h1 {
-        font-family: 'Mulish', sans-serif;
+        font-family: $font-name;
         font-style: normal;
         font-weight: 800;
         font-size: 24px;
@@ -1598,7 +1632,7 @@
         /* identical to box height, or 117% */
         text-align: start;
 
-        color: #000000;
+        color: $black-color;
     }
 
     .header {
@@ -1625,6 +1659,7 @@
             width: 100%;
             // justify-content: flex-end;
             align-items: center;
+            font-family: $font-name;
             
         }
 
@@ -1687,7 +1722,7 @@
                 height: 48px;
 
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 14px;
@@ -1702,7 +1737,7 @@
 
             &-item:hover {
                 background: #FFFFFF;
-                color: #EF363C;
+                color: $btn-color-red;
             }
 
             &-item:first-child {
@@ -1735,7 +1770,7 @@
                     border-radius: 12px;
                     margin-right: 12px;
 
-                    font-family: 'Mulish', sans-serif;
+                    font-family: $font-name;
                     font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
@@ -1743,7 +1778,7 @@
                     /* identical to box height, or 129% */
 
 
-                    color: #000000;
+                    color: $black-color;
 
                     p {
                         margin: 0;
@@ -1770,7 +1805,7 @@
                 border: 1px solid #CBCBCB;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -1778,11 +1813,11 @@
                 /* identical to box height, or 129% */
                 padding-left: 20px;
                 outline: 0;
-                color: #000000;
+                color: $black-color;
             }
 
             input::placeholder {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -1790,7 +1825,7 @@
                 /* identical to box height, or 129% */
 
 
-                color: #000000;
+                color: $black-color;
             }
 
             .search {
@@ -1799,10 +1834,10 @@
                 left: 768px;
                 top: 0px;
 
-                background: #EF363C;
+                background: $btn-color-red;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -1844,6 +1879,7 @@
         margin-top: 60px;
 
         .item {
+            text-align: center;
             padding: 20px 16px;
             background: #F6F6F6;
             border-radius: 12px;
@@ -1858,7 +1894,7 @@
             }
 
             p {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -1867,7 +1903,7 @@
                 width: 226px;
                 text-align: center;
 
-                color: #000000;
+                color: $black-color;
             }
         }
 
@@ -1925,7 +1961,7 @@
                     }
 
                     &-title {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 800;
                         font-size: 24px;
@@ -1933,11 +1969,11 @@
                         /* or 117% */
 
 
-                        color: #000000;
+                        color: $black-color;
                     }
 
                     &-full {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
@@ -1976,7 +2012,7 @@
 @media (min-width: 799px) and (max-width: 899px) {
 
     h1 {
-        font-family: 'Mulish', sans-serif;
+        font-family: $font-name;
         font-style: normal;
         font-weight: 800;
         font-size: 24px;
@@ -1984,7 +2020,7 @@
         /* identical to box height, or 117% */
         text-align: start;
 
-        color: #000000;
+        color: $black-color;
     }
 
     .header {
@@ -2011,6 +2047,7 @@
             width: 100%;
             // justify-content: flex-end;
             align-items: center;
+            font-family: $font-name;
             
         }
 
@@ -2068,7 +2105,7 @@
                 height: 48px;
 
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 14px;
@@ -2083,7 +2120,7 @@
 
             &-item:hover {
                 background: #FFFFFF;
-                color: #EF363C;
+                color: $btn-color-red;
             }
 
             &-item:first-child {
@@ -2116,7 +2153,7 @@
                     border-radius: 12px;
                     margin-right: 12px;
 
-                    font-family: 'Mulish', sans-serif;
+                    font-family: $font-name;
                     font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
@@ -2124,7 +2161,7 @@
                     /* identical to box height, or 129% */
 
 
-                    color: #000000;
+                    color: $black-color;
 
                     p {
                         margin: 0;
@@ -2151,7 +2188,7 @@
                 border: 1px solid #CBCBCB;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -2159,11 +2196,11 @@
                 /* identical to box height, or 129% */
                 padding-left: 20px;
                 outline: 0;
-                color: #000000;
+                color: $black-color;
             }
 
             input::placeholder {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -2171,7 +2208,7 @@
                 /* identical to box height, or 129% */
 
 
-                color: #000000;
+                color: $black-color;
             }
 
             .search {
@@ -2180,10 +2217,10 @@
                 left: 768px;
                 top: 0px;
 
-                background: #EF363C;
+                background: $btn-color-red;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -2225,6 +2262,7 @@
         margin-top: 60px;
 
         .item {
+            text-align: center;
             padding: 20px 16px;
             background: #F6F6F6;
             border-radius: 12px;
@@ -2239,7 +2277,7 @@
             // }
 
             p {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -2248,7 +2286,7 @@
                 // width: 226px;
                 text-align: center;
 
-                color: #000000;
+                color: $black-color;
             }
         }
 
@@ -2306,7 +2344,7 @@
                     }
 
                     &-title {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 800;
                         font-size: 24px;
@@ -2314,11 +2352,11 @@
                         /* or 117% */
 
 
-                        color: #000000;
+                        color: $black-color;
                     }
 
                     &-full {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
@@ -2357,7 +2395,7 @@
 @media (max-width: 798px) {
 
     h1 {
-        font-family: 'Mulish', sans-serif;
+        font-family: $font-name;
         font-style: normal;
         font-weight: 800;
         font-size: 24px;
@@ -2365,7 +2403,7 @@
         /* identical to box height, or 117% */
         text-align: start;
 
-        color: #000000;
+        color: $black-color;
     }
 
     .header {
@@ -2392,7 +2430,7 @@
             width: 100%;
             // justify-content: flex-end;
             align-items: center;
-            
+            font-family: $font-name;
         }
 
 
@@ -2449,7 +2487,7 @@
                 // height: 48px;
 
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 14px;
@@ -2464,7 +2502,7 @@
 
             &-item:hover {
                 background: #FFFFFF;
-                color: #EF363C;
+                color: $btn-color-red;
             }
 
             &-item:first-child {
@@ -2497,7 +2535,7 @@
                     border-radius: 12px;
                     margin-right: 12px;
 
-                    font-family: 'Mulish', sans-serif;
+                    font-family: $font-name;
                     font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
@@ -2505,7 +2543,7 @@
                     /* identical to box height, or 129% */
 
 
-                    color: #000000;
+                    color: $black-color;
 
                     p {
                         margin: 0;
@@ -2532,7 +2570,7 @@
                 border: 1px solid #CBCBCB;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -2540,11 +2578,11 @@
                 /* identical to box height, or 129% */
                 padding-left: 20px;
                 outline: 0;
-                color: #000000;
+                color: $black-color;
             }
 
             input::placeholder {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -2552,7 +2590,7 @@
                 /* identical to box height, or 129% */
 
 
-                color: #000000;
+                color: $black-color;
             }
 
             .search {
@@ -2561,10 +2599,10 @@
                 left: 768px;
                 top: 0px;
 
-                background: #EF363C;
+                background: $btn-color-red;
                 border-radius: 12px;
 
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -2606,6 +2644,7 @@
         margin-top: 60px;
 
         .item {
+            text-align: center;
             padding: 20px 16px;
             background: #F6F6F6;
             border-radius: 12px;
@@ -2620,7 +2659,7 @@
             // }
 
             p {
-                font-family: 'Mulish', sans-serif;
+                font-family: $font-name;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
@@ -2629,7 +2668,7 @@
                 // width: 226px;
                 text-align: center;
 
-                color: #000000;
+                color: $black-color;
             }
         }
 
@@ -2687,7 +2726,7 @@
                     }
 
                     &-title {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 800;
                         font-size: 24px;
@@ -2695,11 +2734,11 @@
                         /* or 117% */
 
 
-                        color: #000000;
+                        color: $black-color;
                     }
 
                     &-full {
-                        font-family: 'Mulish', sans-serif;
+                        font-family: $font-name;
                         font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
