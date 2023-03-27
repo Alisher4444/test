@@ -4,11 +4,46 @@
 .result {
     display: flex;
     flex-direction: row;
+    font-family: $font-name;
 }
 
 .background {
+    position: relative;
+    .sliders {
+        width: 100%;
+        
+    }
     img {
         width: 100%;
+    }
+
+    button {
+        width: 36px;
+        height: 36px;
+        border: 0;
+        outline: 0;
+        background: #EF363C;
+        border-radius: 12px;
+        padding: 6px 5px;
+
+        img {
+            width: auto;
+        }
+    }
+    button:first-child {
+        position: absolute;
+        top: 50%;
+        left: 100px;
+    }
+
+    button:last-child {
+        position: absolute;
+        top: 50%;
+        right: 100px;
+
+        img {
+            transform: rotate(180deg);
+        }
     }
 }
 

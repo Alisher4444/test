@@ -3,12 +3,7 @@
     
         <Header @showBurger="showBurger" :humburger="humburger"></Header>
     
-        <div class="background">
-            <div class="slider">
-                <img src="../assets/images/Banner.jpg" alt="">
-            </div>
-    
-        </div>
+        <Slider />
     
         <Filter />
     
@@ -112,6 +107,7 @@
 <script>
 import Header from '../components/c-header.vue'
 import Filter from '../components/c-filter.vue'
+import Slider from '../components/c-slider.vue'
 
 export default {
     name: 'App',
@@ -121,7 +117,8 @@ export default {
 
     components: {
         Header,
-        Filter
+        Filter,
+        Slider,
     },
 
 
